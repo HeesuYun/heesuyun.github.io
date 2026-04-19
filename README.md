@@ -17,6 +17,7 @@ Open the URL Vite prints (usually `http://localhost:5173/`).
 - **`src/components/`** — Shared UI: `SiteHeader`, `SiteFooter`, `PrimaryNav`, `PageMain`, `ExternalLink`, `SkipLink`, and feature folders (`about/`, `cv/`, `contact/`).
 - **`src/constants/links.ts`** — Shared outbound URLs and contact email.
 - **`src/hooks/useDocumentTitle.ts`** — Sets `document.title` per route.
+- **`docs/`** — Production build output (committed so GitHub Pages can serve from **Branch → `/docs`** without Actions).
 
 ## Production build
 
@@ -24,10 +25,19 @@ Open the URL Vite prints (usually `http://localhost:5173/`).
 npm run build
 ```
 
-Output is in `dist/`. Preview locally with `npm run preview`.
+Output is written to **`docs/`** (includes `404.html` for client-side routes). Preview locally with `npm run preview`.
 
-## GitHub Pages
+After changing the site, run **`npm run build`**, commit the updated **`docs/`** folder, and push.
 
-This repo includes [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml), which builds with Node 20, copies `index.html` to `404.html` for client-side routing, and deploys `dist/` to Pages.
+## GitHub Pages (fix blank site)
 
-In the repository **Settings → Pages**, set **Build and deployment** source to **GitHub Actions** (not “Deploy from a branch”). After a successful run on `main`, the site is served at `https://heesuyun.github.io/`.
+The root `index.html` is only for **Vite dev** (it loads `/src/main.tsx`). GitHub must **not** publish repo root alone for production.
+
+1. Open the repo on GitHub → **Settings** → **Pages**.
+2. Under **Build and deployment**, choose **Deploy from a branch**.
+3. Set **Branch** to `main` and **Folder** to **`/docs`** (not `/ (root)`).
+4. Save, wait a minute, then reload `https://heesuyun.github.io/`.
+
+### Optional: GitHub Actions instead
+
+If you prefer Actions-only hosting (no committed `docs/`), you can set Pages source to **GitHub Actions** and use [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml), which publishes the same `docs/` build artifact.
