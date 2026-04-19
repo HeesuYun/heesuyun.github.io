@@ -13,16 +13,16 @@ export function OtherProfessionalSection() {
       id="other"
     >
       <h2 className="section-heading" id="other-heading">
-        Other professional
+        Other Professional
       </h2>
 
       <h3 className="cv-subheading" id="memberships">
-        Professional memberships
+        Professional Memberships
       </h3>
       <CvPlainList lines={PROFESSIONAL_MEMBERSHIPS} />
 
       <h3 className="cv-subheading" id="software">
-        Software &amp; tools
+        Software &amp; Tools
       </h3>
       <CvPlainList lines={SOFTWARE_TOOLS} />
 

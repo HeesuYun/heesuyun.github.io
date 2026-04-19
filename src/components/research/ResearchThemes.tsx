@@ -1,8 +1,8 @@
 const THEMES = [
   "Psycholinguistics",
-  "Cognitive neuroscience of language",
-  "Prediction & prediction error",
-  "Comprehension & production",
+  "Cognitive Neuroscience of Language",
+  "Prediction & Prediction Error",
+  "Comprehension & Production",
 ] as const;
 
 export function ResearchThemes() {
@@ -13,7 +13,7 @@ export function ResearchThemes() {
       id="research"
     >
       <h2 className="section-heading" id="research-heading">
-        Research interests
+        Research Interests
       </h2>
       <ul className="research-chip-list">
         {THEMES.map((label) => (

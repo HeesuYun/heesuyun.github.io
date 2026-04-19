@@ -9,7 +9,7 @@ export function MentoringSection() {
       id="mentoring"
     >
       <h2 className="section-heading" id="mentoring-heading">
-        Mentoring &amp; teaching assistant experience
+        Mentoring &amp; Teaching Assistant Experience
       </h2>
       <CvPlainList lines={MENTORING} />
     </section>

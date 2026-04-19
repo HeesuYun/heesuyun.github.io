@@ -9,7 +9,7 @@ export function AwardsSection() {
       id="awards"
     >
       <h2 className="section-heading" id="awards-heading">
-        Awards &amp; research grants
+        Awards &amp; Research Grants
       </h2>
       <CvPlainList lines={AWARDS} />
     </section>

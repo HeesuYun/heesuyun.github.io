@@ -9,7 +9,7 @@ export function InvitedTalksSection() {
       id="invited"
     >
       <h2 className="section-heading" id="invited-heading">
-        Invited talks
+        Invited Talks
       </h2>
       <CvPlainList lines={INVITED_TALKS} />
     </section>

@@ -1,5 +1,5 @@
-import { EDUCATION_EMPLOYMENT } from "../../data/cvContent";
-import { CvPlainList } from "./CvPlainList";
+import { EDUCATION_EMPLOYMENT_TIMELINE } from "../../data/cvContent";
+import { EducationEmploymentTimeline } from "./EducationEmploymentTimeline";
 
 export function EducationSection() {
   return (
@@ -9,9 +9,9 @@ export function EducationSection() {
       id="education"
     >
       <h2 className="section-heading" id="education-heading">
-        Employment &amp; education
+        Employment &amp; Education
       </h2>
-      <CvPlainList lines={EDUCATION_EMPLOYMENT} />
+      <EducationEmploymentTimeline entries={EDUCATION_EMPLOYMENT_TIMELINE} />
     </section>
   );
 }

@@ -1,5 +1,8 @@
 /** Full CV text (from HeesuYun_CV.pdf) for the web appendix; trim/summarize later as needed. */
 
+import { CV_MEDIA } from "../constants/cvMediaLinks";
+import { LINKS } from "../constants/links";
+
 export type LinkedCitation = {
   citation: string;
   href: string;
@@ -24,21 +27,66 @@ export const UNDER_REVIEW: readonly LinkedCitation[] = [
   },
 ] as const;
 
-export const EDUCATION_EMPLOYMENT: readonly string[] = [
-  "2026–Present — Ph.D. in Psychology, Northeastern University, Boston, MA. PI: Dr. Zhenghan Qi.",
-  "2024–2026 — M.S. in Psychology, Northeastern University, Boston, MA.",
-  "2023–2024 — Research Specialist/Lab manager, University of Pennsylvania, Philadelphia, PA. PI: Dr. John Trueswell.",
-  "2018–2023 — B.S. in Psychology (Cum Laude), Boston College, Chestnut Hill, MA. PI: Dr. Joshua Hartshorne. Honors thesis: The Impact of Linguistic Structures in First Language on Second Language Acquisition: A Study of English Language Learners with 32 Distinct First Languages.",
-] as const;
+/** Employment and education rows for the on-page timeline (same facts as the CV PDF). */
+export type EducationEmploymentEntry = {
+  period: string;
+  title: string;
+  detail?: string;
+};
+
+export const EDUCATION_EMPLOYMENT_TIMELINE: readonly EducationEmploymentEntry[] =
+  [
+    {
+      period: "2026–Present",
+      title: "Ph.D. in Psychology, Northeastern University, Boston, MA",
+      detail: "PI: Dr. Zhenghan Qi.",
+    },
+    {
+      period: "2024–2026",
+      title: "M.S. in Psychology, Northeastern University, Boston, MA",
+    },
+    {
+      period: "2023–2024",
+      title:
+        "Research Specialist / Lab Manager, University of Pennsylvania, Philadelphia, PA",
+      detail: "PI: Dr. John Trueswell.",
+    },
+    {
+      period: "2018–2023",
+      title:
+        "B.S. in Psychology (Cum Laude), Boston College, Chestnut Hill, MA",
+      detail:
+        "PI: Dr. Joshua Hartshorne. Honors thesis: The Impact of Linguistic Structures in First Language on Second Language Acquisition: A Study of English Language Learners with 32 Distinct First Languages.",
+    },
+  ] as const;
 
 export const AWARDS: readonly string[] = [
   "2023 — Paula Menyuk Travel Award, Boston University Conference on Language Development.",
 ] as const;
 
-export const CONFERENCE_PROCEEDINGS: readonly string[] = [
-  "Laver, A., Yun, H., Kim, A. E, & Trueswell, J. (2025). Distributional learning over meaningful words facilitates semantic inferences about previously unknown words. Proceedings of the Annual Meeting of the Cognitive Science Society, 47. [pdf]",
-  'Ovans, Z., Yun, H., Yi, S., Barbara, L., Trueswell, J. (2024). A Look "Inside" Children\'s Real-time Processing of Spatial Prepositions. Proceedings published at the 46th Annual Meeting of the Cognitive Science Society, Rotterdam, the Netherlands. [pdf]',
-  "Yun, H., Li, W., Li, Z., & Hartshorne, J. K. (2023). Do Children Learn English More Quickly When Their Native Language Is Similar To English? Proceedings published at the 45th Annual Meeting of the Cognitive Science Society, Sydney, Australia. [pdf]",
+/** Conference proceedings with optional linked [pdf] from stable repositories. */
+export type CvCitationLine = {
+  citation: string;
+  pdfUrl?: string;
+  posterUrl?: string;
+};
+
+export const CONFERENCE_PROCEEDINGS: readonly CvCitationLine[] = [
+  {
+    citation:
+      "Laver, A., Yun, H., Kim, A. E, & Trueswell, J. (2025). Distributional learning over meaningful words facilitates semantic inferences about previously unknown words. Proceedings of the Annual Meeting of the Cognitive Science Society, 47.",
+    pdfUrl: CV_MEDIA.proceedings.laver2025Distributional,
+  },
+  {
+    citation:
+      'Ovans, Z., Yun, H., Yi, S., Barbara, L., Trueswell, J. (2024). A Look "Inside" Children\'s Real-time Processing of Spatial Prepositions. Proceedings published at the 46th Annual Meeting of the Cognitive Science Society, Rotterdam, the Netherlands.',
+    pdfUrl: CV_MEDIA.proceedings.ovans2024SpatialPrepositions,
+  },
+  {
+    citation:
+      "Yun, H., Li, W., Li, Z., & Hartshorne, J. K. (2023). Do Children Learn English More Quickly When Their Native Language Is Similar To English? Proceedings published at the 45th Annual Meeting of the Cognitive Science Society, Sydney, Australia.",
+    pdfUrl: CV_MEDIA.proceedings.yun2023L2Similarity,
+  },
 ] as const;
 
 export const CONFERENCE_TALKS: readonly string[] = [
@@ -48,17 +96,53 @@ export const CONFERENCE_TALKS: readonly string[] = [
   "Yun, H., Li, W., Li, Z., & Hartshorne, J. K. (2023). Why do older children learn second languages faster than younger children?. Talk presented at the Many Paths to Language Conference, Nijmegen, the Netherlands.",
 ] as const;
 
-export const CONFERENCE_POSTERS: readonly string[] = [
-  "Yun, H., Van Horne A.J.O, & Qi, Z. (2026). Prediction and Prediction-Error-Driven Learning in Children: Developmental Patterns in English Verb Bias Acquisition. Poster presented at the 39th Annual Conference on Human Sentence Processing, MIT, Cambridge, MA. [poster]",
-  "Gobena, E., Yun, H., Earle, F., Qi, Z. (2025). Impact of Chronotype and Training Synchrony on Non-Native Speech Sound Acquisition. Poster presented at 2025 NeuroBoston Symposium, Medford, MA. [poster]",
-  "Yun, H., Montoute, M., Voso, L., Sile, B., Chukrallah, C., Latham, T., Lanka, P., Earle, F., Qi, Z. (2025). Across- but Not With-Category Speech Discrimination Is Associated with Individual Phonological Awareness. Poster presented at the Cognitive Neuroscience Society (CNS) 2025, Boston, MA. [poster]",
-  "Laver, A., Yun, H., Kim, A., Trueswell, J. (2024). Distributional history of pseudowords informs word-referent mappings, but only when language has semantic seeds. Poster presented at the 49th Boston University Conference on Language Development, Boston, MA.",
-  'Ovans, Z., Barbara, L., Yun, H., Yi, S., Trueswell, J. (2024). How fast are children on the "inside"? Real-time processing of spatial prepositions. Poster presented at 37th Annual Conference on Human Sentence Processing, Ann Arbor, MI.',
-  "Vurgun, U,. Yun, H., Barbara, L., Trueswell, J. (2024). Symmetrical Or Not?: A New Method To Probe Real-Time Semantic Categorization. Poster presented at 37th Annual Conference on Human Sentence Processing, Ann Arbor, MI.",
-  "Gomes, V., Huh, Y., Yun, H., and Trueswell, J. (2024). Failure teaches success: Linking real-time event processing & production with negation. Poster presented at the 37th Annual Conference on Human Sentence Processing, Ann Arbor, MI.",
-  "Yun, H., Li, W., Li, Z., & Hartshorne, J. K. (2023). Will Children Learn English Faster If Their Native Language Is Similar to English?. Poster presented at the 45th Annual Meeting of the Cognitive Science Society, Sydney, Australia. [poster]",
-  "Yun, H., Li, W., & Hartshorne, J. K. (2023). Why Do Older Children Learn Second Languages Faster Than Younger Children? (2023). Poster presented at the 48th Boston University Conference on Language Development, Boston, MA. [poster]",
-  "Chang, W.I., Kim, S.J., Yoon Y.T., Yun, H., Ha, J. (2020). On the issues of introducing Green Pricing in South Korea. Abstract published at the Korea Energy Society, 83, Republic of Korea. [pdf]",
+export const CONFERENCE_POSTERS: readonly CvCitationLine[] = [
+  {
+    citation:
+      "Yun, H., Van Horne A.J.O, & Qi, Z. (2026). Prediction and Prediction-Error-Driven Learning in Children: Developmental Patterns in English Verb Bias Acquisition. Poster presented at the 39th Annual Conference on Human Sentence Processing, MIT, Cambridge, MA.",
+    posterUrl: CV_MEDIA.posters.yun2026HspVerbBias,
+  },
+  {
+    citation:
+      "Gobena, E., Yun, H., Earle, F., Qi, Z. (2025). Impact of Chronotype and Training Synchrony on Non-Native Speech Sound Acquisition. Poster presented at 2025 NeuroBoston Symposium, Medford, MA.",
+    posterUrl: CV_MEDIA.posters.gobena2025NeurobostonChronotype,
+  },
+  {
+    citation:
+      "Yun, H., Montoute, M., Voso, L., Sile, B., Chukrallah, C., Latham, T., Lanka, P., Earle, F., Qi, Z. (2025). Across- but Not With-Category Speech Discrimination Is Associated with Individual Phonological Awareness. Poster presented at the Cognitive Neuroscience Society (CNS) 2025, Boston, MA.",
+    posterUrl: CV_MEDIA.posters.yun2025CnsSpeechDiscrimination,
+  },
+  {
+    citation:
+      "Laver, A., Yun, H., Kim, A., Trueswell, J. (2024). Distributional history of pseudowords informs word-referent mappings, but only when language has semantic seeds. Poster presented at the 49th Boston University Conference on Language Development, Boston, MA.",
+  },
+  {
+    citation:
+      'Ovans, Z., Barbara, L., Yun, H., Yi, S., Trueswell, J. (2024). How fast are children on the "inside"? Real-time processing of spatial prepositions. Poster presented at 37th Annual Conference on Human Sentence Processing, Ann Arbor, MI.',
+  },
+  {
+    citation:
+      "Vurgun, U,. Yun, H., Barbara, L., Trueswell, J. (2024). Symmetrical Or Not?: A New Method To Probe Real-Time Semantic Categorization. Poster presented at 37th Annual Conference on Human Sentence Processing, Ann Arbor, MI.",
+  },
+  {
+    citation:
+      "Gomes, V., Huh, Y., Yun, H., and Trueswell, J. (2024). Failure teaches success: Linking real-time event processing & production with negation. Poster presented at the 37th Annual Conference on Human Sentence Processing, Ann Arbor, MI.",
+  },
+  {
+    citation:
+      "Yun, H., Li, W., Li, Z., & Hartshorne, J. K. (2023). Will Children Learn English Faster If Their Native Language Is Similar to English?. Poster presented at the 45th Annual Meeting of the Cognitive Science Society, Sydney, Australia.",
+    posterUrl: CV_MEDIA.posters.yun2023WillChildrenCogsci,
+  },
+  {
+    citation:
+      "Yun, H., Li, W., & Hartshorne, J. K. (2023). Why Do Older Children Learn Second Languages Faster Than Younger Children? (2023). Poster presented at the 48th Boston University Conference on Language Development, Boston, MA.",
+    posterUrl: CV_MEDIA.posters.yun2023WhyOlderBucld,
+  },
+  {
+    citation:
+      "Chang, W.I., Kim, S.J., Yoon Y.T., Yun, H., Ha, J. (2020). On the issues of introducing Green Pricing in South Korea. Abstract published at the Korea Energy Society, 83, Republic of Korea.",
+    pdfUrl: LINKS.changGreenPricingKes2020AbstractPdf,
+  },
 ] as const;
 
 export const INVITED_TALKS: readonly string[] = [
@@ -75,7 +159,7 @@ export const SOFTWARE_TOOLS: readonly string[] = [
 ] as const;
 
 export const LANGUAGES: readonly string[] = [
-  "Korean (Native); English (Fluent); Chinese (Intermediate); Japanese (Elementary); Tagalog (Elementary).",
+  "🇰🇷 Korean (Native); 🇺🇸 English (Fluent); 🇨🇳 Chinese (Intermediate); 🇯🇵 Japanese (Elementary); 🇵🇭 Tagalog (Elementary).",
 ] as const;
 
 export const MENTORING: readonly string[] = [

@@ -5,6 +5,7 @@ import {
   PEER_REVIEWED,
   UNDER_REVIEW,
 } from "../../data/cvContent";
+import { CvCitationList } from "./CvCitationList";
 import { CvLinkedCitationList } from "./CvLinkedCitationList";
 import { CvPlainList } from "./CvPlainList";
 
@@ -16,37 +17,33 @@ export function ScholarlyWorkSection() {
       id="publications"
     >
       <h2 className="section-heading" id="publications-heading">
-        Publications &amp; presentations
+        Publications &amp; Presentations
       </h2>
-      <p className="muted cv-block-intro">
-        Full text mirrors the CV PDF. [pdf] / [poster] markers match the PDF;
-        add links later if you host files on the site.
-      </p>
 
       <h3 className="cv-subheading" id="peer-reviewed">
-        Peer-reviewed published manuscripts
+        Peer-Reviewed Published Manuscripts
       </h3>
       <CvLinkedCitationList items={PEER_REVIEWED} />
 
       <h3 className="cv-subheading" id="under-review">
-        Manuscripts under review
+        Manuscripts Under Review
       </h3>
       <CvLinkedCitationList items={UNDER_REVIEW} />
 
       <h3 className="cv-subheading" id="proceedings">
-        Conference proceedings
+        Conference Proceedings
       </h3>
-      <CvPlainList lines={CONFERENCE_PROCEEDINGS} />
+      <CvCitationList lines={CONFERENCE_PROCEEDINGS} />
 
       <h3 className="cv-subheading" id="talks">
-        Conference talks
+        Conference Talks
       </h3>
       <CvPlainList lines={CONFERENCE_TALKS} />
 
       <h3 className="cv-subheading" id="posters">
-        Conference posters
+        Conference Posters
       </h3>
-      <CvPlainList lines={CONFERENCE_POSTERS} />
+      <CvCitationList lines={CONFERENCE_POSTERS} />
     </section>
   );
 }
