@@ -13,7 +13,8 @@ Open the URL Vite prints (usually `http://localhost:5173/`).
 
 ## Project layout
 
-- **`src/pages/HomePage.tsx`** — Single-page resume: About, Research, Publications, CV, and Contact (`#about`, `#research`, `#publications`, `#cv`, `#contact`). Old paths `/cv` and `/contact` redirect with the matching hash.
+- **`src/pages/HomePage.tsx`** — Single-page resume: About, Research, full CV-style sections (education, awards, scholarly work, invited talks, other professional, mentoring), CV download, and Contact. Main nav hashes: `#about`, `#research`, `#publications`, `#cv`, `#contact` (with deeper anchors under scholarly work and elsewhere). Old paths `/cv` and `/contact` redirect with the matching hash.
+- **`src/data/cvContent.ts`** — Structured copy for education, employment, publications, talks, posters, awards, and related lists (edit here to trim or summarize later).
 - **`src/components/`** — Layout (`SiteHeader`, `SiteFooter`, `SiteLayout`, `PrimaryNav`, `PageMain`, …) plus feature folders (`about/`, `cv/`, `contact/`, `research/`).
 - **`src/constants/links.ts`** — Shared outbound URLs and contact email.
 - **`src/hooks/useDocumentTitle.ts`** — Page title.

@@ -1,4 +1,3 @@
-import { AboutHonors } from "./AboutHonors";
 import { AboutPhd } from "./AboutPhd";
 import { AboutTraining } from "./AboutTraining";
 import { ProfilePortrait } from "./ProfilePortrait";
@@ -30,7 +29,6 @@ export function AboutHomeBand() {
             </p>
             <AboutTraining />
             <AboutPhd />
-            <AboutHonors />
           </div>
         </div>
       </div>

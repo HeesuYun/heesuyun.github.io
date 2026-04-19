@@ -8,12 +8,11 @@ export function CvDownloadPanel() {
       id="cv"
     >
       <h2 className="section-heading" id="cv-heading">
-        Curriculum vitae
+        Downloadable CV (PDF)
       </h2>
       <p className="cv-download__intro">
-        PDF includes education and appointments, awards, peer-reviewed and
-        under-review manuscripts, proceedings, talks, posters, invited
-        presentations, mentoring, teaching, software, and languages.
+        Print-oriented PDF with the same information as this page (plus any
+        formatting you prefer for applications).
       </p>
       <div className="cv-download__actions">
         <a
