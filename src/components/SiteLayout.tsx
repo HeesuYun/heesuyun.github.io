@@ -4,10 +4,12 @@ import { SiteHeader } from "./SiteHeader";
 
 export function SiteLayout() {
   return (
-    <>
+    <div className="site-shell">
       <SiteHeader />
-      <Outlet />
+      <div className="site-shell__body">
+        <Outlet />
+      </div>
       <SiteFooter />
-    </>
+    </div>
   );
 }
