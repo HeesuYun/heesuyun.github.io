@@ -8,11 +8,12 @@ export function CvDownloadPanel() {
       id="cv"
     >
       <h2 className="section-heading" id="cv-heading">
-        Downloadable CV (PDF)
+        CV (PDF)
       </h2>
       <p className="cv-download__intro">
-        Print-oriented PDF with the same information as this page (plus any
-        formatting you prefer for applications).
+        A traditional PDF for applications, references, and other requests. It
+        reflects the same education, research, and publications shown on this
+        site, in a layout suited for printing or uploading to forms.
       </p>
       <div className="cv-download__actions">
         <a
@@ -20,9 +21,9 @@ export function CvDownloadPanel() {
           href={LINKS.cvPdf}
           rel="noopener noreferrer"
         >
-          Downloadable CV
+          Download CV (PDF)
         </a>
-        <p className="cv-download__meta muted">(last updated: March 2026)</p>
+        <p className="cv-download__meta muted">Last updated March 2026</p>
       </div>
     </section>
   );

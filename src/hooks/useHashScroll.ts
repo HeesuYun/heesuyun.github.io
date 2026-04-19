@@ -13,10 +13,19 @@ export function useHashScroll() {
       return;
     }
     const frame = window.requestAnimationFrame(() => {
-      document.getElementById(id)?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+      const el = document.getElementById(id);
+      if (!el) {
+        return;
+      }
+      const header = document.querySelector(".site-header");
+      const headerHeight =
+        header instanceof HTMLElement
+          ? Math.round(header.getBoundingClientRect().height)
+          : 0;
+      const gapPx = 10;
+      const y =
+        el.getBoundingClientRect().top + window.scrollY - headerHeight - gapPx;
+      window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
     });
     return () => window.cancelAnimationFrame(frame);
   }, [hash, pathname]);
