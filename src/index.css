@@ -9,8 +9,9 @@
   --color-border: #c5ddd0;
   --color-header-bg: #e8f4ec;
   --font-sans:
-    system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
-    sans-serif;
+    "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Source Serif 4", Georgia, "Times New Roman", Times, serif;
   --shadow-soft: 0 1px 2px rgb(20 34 26 / 6%);
   --radius: 10px;
   --content-max: min(56rem, 94vw);
@@ -41,6 +42,11 @@ body {
 #root {
   min-height: 100dvh;
   background-color: var(--color-bg);
+  background-image: radial-gradient(
+    ellipse 130% 70% at 50% -15%,
+    rgb(27 107 74 / 0.09),
+    transparent 52%
+  );
 }
 
 .site-shell {
@@ -90,7 +96,24 @@ body {
   gap: 0.75rem 1.5rem;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.anchor-section {
+  scroll-margin-top: 5.75rem;
+}
+
 .site-title {
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.1rem;
   color: var(--color-accent);
@@ -99,10 +122,6 @@ body {
 
 .site-title:hover,
 .site-title:focus-visible {
-  color: var(--color-accent-hover);
-}
-
-.site-title.is-active {
   color: var(--color-accent-hover);
 }
 
@@ -135,6 +154,24 @@ body {
   max-width: var(--content-max);
   margin: 0 auto;
   padding: 2rem clamp(1rem, 3vw, 1.5rem) 3rem;
+}
+
+.section-heading {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-accent);
+}
+
+.section-eyebrow {
+  margin: 0 0 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-muted);
 }
 
 .section {
@@ -172,6 +209,14 @@ body {
   color: var(--color-text);
 }
 
+.about-hero-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: calc(var(--radius) + 2px);
+  padding: clamp(1.25rem, 4vw, 2rem);
+  box-shadow: var(--shadow-soft);
+}
+
 .about-home-band__inner {
   max-width: 100%;
   margin: 0;
@@ -201,6 +246,7 @@ body {
 
 .about-home-hello {
   margin: 0 0 0.5rem;
+  font-family: var(--font-display);
   font-size: clamp(2.25rem, 5vw, 3.25rem);
   font-weight: 600;
   line-height: 1.1;
@@ -237,6 +283,64 @@ body {
 .about-home-band a:hover,
 .about-home-band a:focus-visible {
   color: var(--color-accent-hover);
+}
+
+.research-themes {
+  margin-top: 2.5rem;
+  padding-bottom: 0;
+}
+
+.cv-download {
+  margin-top: 2.5rem;
+}
+
+.contact-panel {
+  margin-top: 2.5rem;
+}
+
+.research-chip-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.65rem;
+}
+
+.research-chip {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  background: rgb(27 107 74 / 0.08);
+  border: 1px solid var(--color-border);
+}
+
+.cv-download__intro {
+  margin: 0 0 1rem;
+  color: var(--color-muted);
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+.contact-intro {
+  margin: 0 0 1rem;
+  color: var(--color-muted);
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+.contact-label {
+  display: inline-block;
+  min-width: 4.5rem;
+  margin-right: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-muted);
 }
 
 .section p {
@@ -374,6 +478,12 @@ body {
 .site-footer p {
   margin: 0;
   font-size: 0.9rem;
+}
+
+.site-footer__colophon {
+  margin-top: 0.5rem;
+  font-size: 0.82rem;
+  line-height: 1.45;
 }
 
 :focus-visible {

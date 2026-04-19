@@ -1,24 +1,38 @@
-import { NavLink } from "react-router-dom";
-import { navLinkClass } from "../utils/navLinkClass";
+import { useLocation } from "react-router-dom";
+import { sectionNavClass } from "../utils/sectionNavClass";
 
 export function PrimaryNav() {
+  const { hash, pathname } = useLocation();
+  const effectiveHash = pathname === "/" ? hash : false;
+
   return (
     <nav className="site-nav" aria-label="Primary">
       <ul>
         <li>
-          <NavLink to="/" end className={navLinkClass}>
+          <a className={sectionNavClass(effectiveHash, "about")} href="#about">
             About
-          </NavLink>
+          </a>
         </li>
         <li>
-          <NavLink to="/cv" className={navLinkClass}>
+          <a
+            className={sectionNavClass(effectiveHash, "research")}
+            href="#research"
+          >
+            Research
+          </a>
+        </li>
+        <li>
+          <a className={sectionNavClass(effectiveHash, "cv")} href="#cv">
             CV
-          </NavLink>
+          </a>
         </li>
         <li>
-          <NavLink to="/contact" className={navLinkClass}>
+          <a
+            className={sectionNavClass(effectiveHash, "contact")}
+            href="#contact"
+          >
             Contact
-          </NavLink>
+          </a>
         </li>
       </ul>
     </nav>

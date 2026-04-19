@@ -13,10 +13,11 @@ Open the URL Vite prints (usually `http://localhost:5173/`).
 
 ## Project layout
 
-- **`src/pages/`** — Route-level screens (`HomePage`, `CvPage`, `ContactPage`).
-- **`src/components/`** — Shared UI: `SiteHeader`, `SiteFooter`, `PrimaryNav`, `PageMain`, `ExternalLink`, `SkipLink`, and feature folders (`about/`, `cv/`, `contact/`).
+- **`src/pages/HomePage.tsx`** — Single-page resume: About, Research, CV, and Contact are sections with `id` anchors (`#about`, `#research`, `#cv`, `#contact`). Old paths `/cv` and `/contact` redirect to the same page with the right hash.
+- **`src/components/`** — Layout (`SiteHeader`, `SiteFooter`, `SiteLayout`, `PrimaryNav`, `PageMain`, …) plus feature folders (`about/`, `cv/`, `contact/`, `research/`).
 - **`src/constants/links.ts`** — Shared outbound URLs and contact email.
-- **`src/hooks/useDocumentTitle.ts`** — Sets `document.title` per route.
+- **`src/hooks/useDocumentTitle.ts`** — Page title.
+- **`src/hooks/useHashScroll.ts`** — Smooth-scroll to the section in the URL hash.
 - **`docs/`** — Production build output (committed so GitHub Pages can serve from **Branch → `/docs`** without Actions).
 
 ## Production build
