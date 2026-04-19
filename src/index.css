@@ -254,6 +254,17 @@ body {
   color: var(--color-accent-hover);
 }
 
+/* Beat .section a (green on green) for primary buttons inside panels */
+.section--panel .button-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.section--panel .button-link:hover,
+.section--panel .button-link:focus-visible {
+  color: #fff;
+}
+
 .section--panel {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
