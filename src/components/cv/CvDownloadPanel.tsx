@@ -11,8 +11,9 @@ export function CvDownloadPanel() {
         Curriculum vitae
       </h2>
       <p className="cv-download__intro">
-        PDF includes education, research experience, skills, and selected
-        presentations.
+        PDF includes education and appointments, awards, peer-reviewed and
+        under-review manuscripts, proceedings, talks, posters, invited
+        presentations, mentoring, teaching, software, and languages.
       </p>
       <div className="cv-download__actions">
         <a

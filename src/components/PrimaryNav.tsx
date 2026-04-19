@@ -22,6 +22,14 @@ export function PrimaryNav() {
           </a>
         </li>
         <li>
+          <a
+            className={sectionNavClass(effectiveHash, "publications")}
+            href="#publications"
+          >
+            Publications
+          </a>
+        </li>
+        <li>
           <a className={sectionNavClass(effectiveHash, "cv")} href="#cv">
             CV
           </a>

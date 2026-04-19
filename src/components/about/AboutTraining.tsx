@@ -4,15 +4,12 @@ import { ExternalLink } from "../ExternalLink";
 export function AboutTraining() {
   return (
     <p>
-      I earned my B.S. in Psychology from Boston College in May 2023, where I
-      conducted research under the supervision of{" "}
+      I earned my B.S. in Psychology (Cum Laude) from Boston College
+      (2018&ndash;2023), supervised by{" "}
       <ExternalLink href={LINKS.hartshorne}>Dr. Joshua Hartshorne</ExternalLink>
-      . After graduation, I worked as a research specialist/lab manager at the{" "}
-      <ExternalLink href={LINKS.trueswellLab}>
-        Language Learning Lab
-      </ExternalLink>{" "}
-      at the University of Pennsylvania, led by{" "}
-      <ExternalLink href={LINKS.trueswell}>Dr. John Trueswell</ExternalLink>.
+      . My honors thesis examined how linguistic structure in a first language
+      relates to second-language acquisition among English learners from 32
+      distinct first-language backgrounds.
     </p>
   );
 }

@@ -298,6 +298,28 @@ body {
   margin-top: 2.5rem;
 }
 
+.publications-section {
+  margin-top: 2.5rem;
+}
+
+.publication-list {
+  margin: 0;
+  padding-left: 1.35rem;
+  line-height: 1.55;
+}
+
+.publication-list li {
+  margin-bottom: 1rem;
+}
+
+.publication-list li:last-child {
+  margin-bottom: 0;
+}
+
+.publications-more {
+  margin: 1.1rem 0 0;
+}
+
 .research-chip-list {
   list-style: none;
   margin: 0;

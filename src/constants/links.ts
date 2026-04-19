@@ -8,6 +8,8 @@ export const LINKS = {
   cvPdf:
     "https://drive.google.com/file/d/1qv8wrHSILi9WMwhM6ZU-x8uoa1CFxySD/view?usp=sharing",
   linkedin: "https://www.linkedin.com/in/heesuyun/",
+  cognition2026: "https://doi.org/10.1016/j.cognition.2025.106342",
+  psyarxivUnderReview: "https://osf.io/preprints/psyarxiv/ycqvn",
 } as const;
 
 export const CONTACT_EMAIL = "yun.he@northeastern.edu";

@@ -23,6 +23,12 @@ export function ContactDetails() {
           <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
         </li>
         <li>
+          <span className="contact-label">Lab</span>{" "}
+          <ExternalLink href={LINKS.qLab}>
+            Language Acquisition and Brain Lab
+          </ExternalLink>
+        </li>
+        <li>
           <span className="contact-label">Web</span>{" "}
           <ExternalLink href={LINKS.linkedin}>LinkedIn</ExternalLink>
         </li>

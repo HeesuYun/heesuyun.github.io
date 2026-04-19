@@ -1,8 +1,8 @@
 const THEMES = [
-  "Prediction error",
-  "Language comprehension",
-  "Language production",
-  "Cognitive neuroscience",
+  "Psycholinguistics",
+  "Cognitive neuroscience of language",
+  "Prediction & prediction error",
+  "Comprehension & production",
 ] as const;
 
 export function ResearchThemes() {
