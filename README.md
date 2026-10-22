@@ -13,12 +13,12 @@ Open the URL Vite prints (usually `http://localhost:5173/`).
 
 ## Project layout
 
-- **`src/pages/HomePage.tsx`** — Single-page resume: About, Research, full CV-style sections (education, awards, scholarly work, invited talks, other professional, mentoring), CV download, and Contact. Main nav hashes: `#about`, `#research`, `#publications`, `#cv`, `#contact` (with deeper anchors under scholarly work and elsewhere). Old paths `/cv` and `/contact` redirect with the matching hash.
-- **`src/data/cvContent.ts`** — Structured copy for education, employment, publications, talks, posters, awards, and related lists (edit here to trim or summarize later).
-- **`src/components/`** — Layout (`SiteHeader`, `SiteFooter`, `SiteLayout`, `PrimaryNav`, `PageMain`, …) plus feature folders (`about/`, `cv/`, `contact/`, `research/`).
-- **`src/constants/links.ts`** — Shared outbound URLs and contact email.
-- **`src/hooks/useDocumentTitle.ts`** — Page title.
-- **`src/hooks/useHashScroll.ts`** — Smooth-scroll to the section in the URL hash.
+- **`src/pages/`** — One component per page: `HomePage` (`/`, portrait, bio, research interests), `PublicationsPage` (`/publications`), `ContactPage` (`/contact`, contact details and CV download). Old URLs (`/cv`, and section hashes such as `/#publications`) redirect to the matching page in `App.tsx`.
+- **`src/data/publications.ts`** — Publication entries (title, authors, venue, link), grouped by section.
+- **`src/components/`** — Layout (`SiteHeader`, `SiteFooter`, `SiteLayout`, `PrimaryNav`, `PageMain`, …) plus feature folders (`about/`, `publications/`).
+- **`src/constants/links.ts`** — Shared outbound URLs, contact email, and the CV's last-updated date.
+- **`src/hooks/useTheme.ts`** + **`src/components/ThemeToggle.tsx`** — Light/dark theme: follows the system until the visitor picks one with the header toggle (saved in `localStorage`; `index.html` applies it before first paint). Colours are tokens at the top of `src/index.css`.
+- **`src/hooks/useScrollOnNavigate.ts`** — Scroll to the top on a page change, or to the section named in the URL hash.
 - **`docs/`** — Production build output (committed so GitHub Pages can serve from **Branch → `/docs`** without Actions).
 
 ## Production build

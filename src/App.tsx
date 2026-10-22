@@ -1,14 +1,34 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { SiteLayout } from "./components/SiteLayout";
+import { ContactPage } from "./pages/ContactPage";
 import { HomePage } from "./pages/HomePage";
+import { PublicationsPage } from "./pages/PublicationsPage";
+
+/** Section hashes from the old single-page site, mapped to their new pages. */
+const LEGACY_HASHES: Record<string, string> = {
+  "#research": "/",
+  "#publications": "/publications",
+  "#peer-reviewed": "/publications#peer-reviewed",
+  "#under-review": "/publications#under-review",
+  "#proceedings": "/publications#proceedings",
+  "#cv": "/contact#cv",
+  "#contact": "/contact",
+};
+
+function HomeRoute() {
+  const { hash } = useLocation();
+  const target = LEGACY_HASHES[hash];
+  return target ? <Navigate replace to={target} /> : <HomePage />;
+}
 
 export default function App() {
   return (
     <Routes>
       <Route element={<SiteLayout />}>
-        <Route index element={<HomePage />} />
-        <Route path="cv" element={<Navigate replace to="/#cv" />} />
-        <Route path="contact" element={<Navigate replace to="/#contact" />} />
+        <Route index element={<HomeRoute />} />
+        <Route path="publications" element={<PublicationsPage />} />
+        <Route path="contact" element={<ContactPage />} />
+        <Route path="cv" element={<Navigate replace to="/contact#cv" />} />
       </Route>
       <Route path="*" element={<Navigate replace to="/" />} />
     </Routes>
