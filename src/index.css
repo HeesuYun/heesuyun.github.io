@@ -290,10 +290,11 @@ a:hover {
 
 /* ---------- Shared pieces ---------- */
 
+/* Same size as the home page name (.about__name). */
 .page-title {
-  font-size: clamp(2.75rem, 6vw, 5rem);
-  line-height: 1;
-  letter-spacing: -0.03em;
+  font-size: clamp(2.5rem, 4.5vw, 4rem);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
   margin-bottom: clamp(2.5rem, 5vw, 4rem);
 }
 
