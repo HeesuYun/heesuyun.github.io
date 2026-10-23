@@ -19,7 +19,6 @@ export function HomePage() {
           </h1>
           <p className="about__names rise" style={stagger(3)}>
             Pronounced &ldquo;hee-soo&rdquo; &middot;{" "}
-            <span lang="ko">윤희수</span> &middot;{" "}
             <span lang="zh-Hant">尹熙秀</span> &middot;{" "}
             <span lang="ja">ヒス</span>
           </p>
