@@ -409,6 +409,7 @@ button.button-link {
 /* The serif has no Hangul, so use the sans stack's system Korean font, as the names line does. */
 .about__name [lang="ko"] {
   font-family: var(--font-sans);
+  font-size: 0.85em;
   font-weight: 500;
   letter-spacing: 0;
 }

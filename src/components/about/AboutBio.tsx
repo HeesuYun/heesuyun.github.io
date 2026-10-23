@@ -16,9 +16,8 @@ export function AboutBio() {
         comprehension and production.
       </p>
       <p>
-        Before starting my Ph.D., I completed my M.S. in Psychology at
-        Northeastern University (2024&ndash;2026). From 2023 to 2024, I worked
-        as a research specialist and lab manager in the{" "}
+        From 2023 to 2024, I worked as a research specialist and lab manager in
+        the{" "}
         <ExternalLink href={LINKS.trueswellLab}>
           Language Learning Lab
         </ExternalLink>{" "}
