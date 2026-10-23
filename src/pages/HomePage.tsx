@@ -15,12 +15,8 @@ export function HomePage() {
       <div className="about">
         <div className="about__head">
           <h1 className="about__name rise" style={stagger(1)}>
-            Heesu Yun
+            Heesu Yun (<span lang="ko">윤희수</span>)
           </h1>
-          <p className="about__lede rise" style={stagger(2)}>
-            Ph.D. student in Psychology at Northeastern University, studying
-            prediction in language.
-          </p>
           <p className="about__names rise" style={stagger(3)}>
             Pronounced &ldquo;hee-soo&rdquo; &middot;{" "}
             <span lang="ko">윤희수</span> &middot;{" "}
