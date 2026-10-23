@@ -1,6 +1,6 @@
 /** Outbound URLs used across the site. */
 export const LINKS = {
-  hartshorne: "https://ai4commsci.github.io/JKHartshorne.About.html",
+  hartshorne: "https://malt-sydney.github.io/malt/",
   trueswellLab: "https://web.sas.upenn.edu/trueswell-lab/",
   trueswell: "https://web.sas.upenn.edu/trueswell-lab/labmembers/trueswell/",
   qi: "https://cos.northeastern.edu/people/zhenghan-qi/",
@@ -13,6 +13,3 @@ export const LINKS = {
 } as const;
 
 export const CONTACT_EMAIL = "yun.he@northeastern.edu";
-
-/** Shown next to the CV download. */
-export const CV_LAST_UPDATED = "March 2026";

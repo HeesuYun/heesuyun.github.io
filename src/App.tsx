@@ -1,7 +1,7 @@
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { SiteLayout } from "./components/SiteLayout";
-import { ContactPage } from "./pages/ContactPage";
 import { HomePage } from "./pages/HomePage";
+import { ProjectsPage } from "./pages/ProjectsPage";
 import { PublicationsPage } from "./pages/PublicationsPage";
 
 /** Section hashes from the old single-page site, mapped to their new pages. */
@@ -11,8 +11,6 @@ const LEGACY_HASHES: Record<string, string> = {
   "#peer-reviewed": "/publications#peer-reviewed",
   "#under-review": "/publications#under-review",
   "#proceedings": "/publications#proceedings",
-  "#cv": "/contact#cv",
-  "#contact": "/contact",
 };
 
 function HomeRoute() {
@@ -27,8 +25,7 @@ export default function App() {
       <Route element={<SiteLayout />}>
         <Route index element={<HomeRoute />} />
         <Route path="publications" element={<PublicationsPage />} />
-        <Route path="contact" element={<ContactPage />} />
-        <Route path="cv" element={<Navigate replace to="/contact#cv" />} />
+        <Route path="projects" element={<ProjectsPage />} />
       </Route>
       <Route path="*" element={<Navigate replace to="/" />} />
     </Routes>

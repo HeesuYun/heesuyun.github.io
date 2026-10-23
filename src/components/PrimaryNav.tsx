@@ -18,8 +18,8 @@ export function PrimaryNav() {
           </NavLink>
         </li>
         <li>
-          <NavLink className={navClass} to="/contact">
-            Contact &amp; CV
+          <NavLink className={navClass} to="/projects">
+            Projects
           </NavLink>
         </li>
       </ul>
