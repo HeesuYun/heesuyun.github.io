@@ -6,10 +6,12 @@ export type Publication = {
   authors: string;
   year: string;
   title: string;
-  venue: string;
-  href: string;
+  /** Omitted for manuscripts with no venue yet. */
+  venue?: string;
+  /** Omitted, with `linkLabel`, when there is nothing public to link to. */
+  href?: string;
   /** Button text; says what the link does. */
-  linkLabel: string;
+  linkLabel?: string;
 };
 
 export type PublicationGroup = {
@@ -49,6 +51,12 @@ export const PUBLICATION_GROUPS: readonly PublicationGroup[] = [
         venue: "Preprint on PsyArXiv.",
         href: LINKS.psyarxivUnderReview,
         linkLabel: "Read the preprint",
+      },
+      {
+        authors: "Laver A., Yun H., Chen J., Kim A. E., Trueswell J.",
+        year: "under review",
+        title:
+          "How semantic seeds shape what can be learned from the input: Evidence for semantic generalization over distributional categories",
       },
     ],
   },

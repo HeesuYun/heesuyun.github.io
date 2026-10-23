@@ -30,10 +30,12 @@ export function PublicationEntry({ publication }: PublicationEntryProps) {
       <p className="publication__authors">
         {authorLine(authors)} ({year})
       </p>
-      <p className="publication__venue">{richText(venue)}</p>
-      <ExternalLink className="button-link publication__link" href={href}>
-        {linkLabel}
-      </ExternalLink>
+      {venue && <p className="publication__venue">{richText(venue)}</p>}
+      {href && (
+        <ExternalLink className="button-link publication__link" href={href}>
+          {linkLabel}
+        </ExternalLink>
+      )}
     </li>
   );
 }
