@@ -24,8 +24,8 @@ export function AboutBio() {
         <ExternalLink href={LINKS.trueswell}>Dr. John Trueswell</ExternalLink>.
       </p>
       <p>
-        I earned my B.S. in Psychology (Cum Laude) from Boston College
-        (2018&ndash;2023), where I was supervised by{" "}
+        I earned my B.S. in Psychology from Boston College (2018&ndash;2023),
+        where I was supervised by{" "}
         <ExternalLink href={LINKS.hartshorne}>
           Dr. Joshua Hartshorne
         </ExternalLink>
