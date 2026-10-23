@@ -16,8 +16,7 @@ export function AboutBio() {
         comprehension and production.
       </p>
       <p>
-        From 2023 to 2024, I worked as a research specialist and lab manager in
-        the{" "}
+        From 2023 to 2024, I worked as a research specialist/lab manager in the{" "}
         <ExternalLink href={LINKS.trueswellLab}>
           Language Learning Lab
         </ExternalLink>{" "}
